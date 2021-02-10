@@ -55,7 +55,7 @@ img = image.load_img(imgdir, target_size=tagsize,interpolation='bilinear')
 img = np.expand_dims(img, 0)
 
 result = centernet.test_one_image(imgs)
-#result = centernet.test_one_image(img)
+#result = centernet.test_one_image(data)
 
 bbox = result[0]
 scores = result[1]

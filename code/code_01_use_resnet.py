@@ -30,13 +30,13 @@ tensorimg = preprocess_input(tensorimg)  # 图像预处理
 with tf.compat.v1.Session() as sess:  # 构建一个会话
     sess.run(tf.compat.v1.global_variables_initializer())
     # 加载ResNet50模型
-    Reslayer = ResNet50(weights='resnet50_weights_tf_dim_ordering_tf_kernels.h5')
+    Reslayer = ResNet50(weights='../mode/resnet50_weights_tf_dim_ordering_tf_kernels.h5')
 
     logits = Reslayer(tensorimg)  # 获取模型的输出节点
     # 得到该图片的每个类别的概率值
     prediction = tf.squeeze(tf.cast(tf.argmax(logits, 1), dtype=tf.int32), [0])
 
-    img_path = './dog.jpg'  # 定义测试图片路径
+    img_path = '../data/dog.jpg'  # 定义测试图片路径
 
     with open(img_path, "rb") as image_file:
         # 把图像编码成base64字符串格式
@@ -67,7 +67,7 @@ with tf.compat.v1.Session() as sess:  # 构建一个会话
 
     ##########################################保存模型
 
-    save_path = './model'  # 设置模型保存路径
+    save_path = '../saved_model'  # 设置模型保存路径
     # 创建用于保存模型的builder对象
     builder = tf.compat.v1.saved_model.builder.SavedModelBuilder(save_path + 'imgclass')
 

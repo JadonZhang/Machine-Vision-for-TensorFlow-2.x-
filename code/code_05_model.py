@@ -21,7 +21,7 @@ class MakeTfdataset(object):
     # tf-dataset数据制作，初始化加载self.dataroot目录中的数据，可以使用read_data转换为tf-dataset数据
 
     def __init__(self):
-        self.dataroot = './dataset'  # 定义数据集路径
+        self.dataroot = '../data/dataset'  # 定义数据集路径
         self.X_data = []  # 人脸图片
         self.Y_data = []  # 人脸图片对应的标签，black（0）和white（1）
         self.write_data()  # 把数据存入到X_data,Y_data
@@ -108,12 +108,12 @@ if __name__ == '__main__':
     # 打印模型结构
     N.model.summary()
 
-    # 模型可视化
-    import os
-
-    os.environ["PATH"] += os.pathsep + r'D:/download/graphviz-2.38/release/bin/'
-    import tensorflow as tf
-
-    img = tf.keras.utils.plot_model(N.model, to_file="model.png", show_shapes=True)
+    # # 模型可视化
+    # import os
+    #
+    # os.environ["PATH"] += os.pathsep + r'D:/download/graphviz-2.38/release/bin/'
+    # import tensorflow as tf
+    #
+    # img = tf.keras.utils.plot_model(N.model, to_file="model.png", show_shapes=True)
 
 

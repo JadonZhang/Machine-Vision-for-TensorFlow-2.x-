@@ -80,7 +80,7 @@ def get_dataset(config, shuffle=True):  # 制作数据集
             if len(filelines) != 0:
                 for i, line in enumerate(filelines):
                     # 标注文件中有两种格式，一种是空格分割，一种是逗号分割
-                    if 'img' in filename.decode():
+                    if 'data' in filename.decode():
                         file_data = line.split(', ')
                     else:
                         file_data = line.split(' ')

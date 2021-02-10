@@ -46,7 +46,7 @@ def writeTextJPG(img_lab_file, crop_margin,save_dir):
 
   if len(filelines) != 0:
     for i, line in enumerate(filelines):
-      if 'img' in img_lab_file[1]:  # 文件有两种格式，一种是空格分割，一种是逗号分割
+      if 'data' in img_lab_file[1]:  # 文件有两种格式，一种是空格分割，一种是逗号分割
         file_data = line.split(', ')
       else:
         file_data = line.split(' ')

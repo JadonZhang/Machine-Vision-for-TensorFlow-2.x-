@@ -57,7 +57,7 @@ def get_dataset(config, shuffle=True,repeat=True):  # 制作数据集
         print(img.shape)
 
         # 对图片的像素进行归一化
- #       img = img / 255.0
+ #       data = data / 255.0
         img = img / 127.5 - 1
 
         def my_py_func(filename):  # 定义函数，用于制作标签

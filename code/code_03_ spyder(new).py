@@ -129,5 +129,5 @@ class Crawler:  # 定义爬虫类
 
 
 crawler = Crawler(0.05) 
-crawler.start('模特 黑人', "org_black", 5) 
-crawler.start('模特 白人', "org_white", 5)
+# crawler.start('模特 黑人', "../data/org_black", 500)
+crawler.start('模特 白人', "../data/org_white", 500)

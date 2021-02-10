@@ -33,7 +33,7 @@ def get_dataset(config, shuffle=True):
         # 获取图片形状
         h, w, c = array_ops.unstack(array_ops.shape(img), 3)
         img = tf.reshape(img, [h, w, c])
-        #        print("sss", h, w, img.shape)  # 直接通过shape拿不到形状-
+        #        print("sss", h, w, data.shape)  # 直接通过shape拿不到形状-
 
         if isNewAPI == True:
             img = tf.image.resize(img, config['tagsize'], tf.image.ResizeMethod.BILINEAR)
@@ -56,7 +56,7 @@ def get_dataset(config, shuffle=True):
             Y = []
             if len(filelines) != 0:
                 for i, line in enumerate(filelines):
-                    if 'img' in filename.decode():  # 文件有两种格式，一种是空格分割，一种是逗号分割
+                    if 'data' in filename.decode():  # 文件有两种格式，一种是空格分割，一种是逗号分割
                         file_data = line.split(', ')
                     else:
                         file_data = line.split(' ')

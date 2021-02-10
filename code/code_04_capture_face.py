@@ -46,5 +46,5 @@ def writeFaceJPG(filename_path, photo_name, save_dir):
 
 
 if __name__ == '__main__':
-    readFilePath(sample_dir='org_black/', save_dir='./dataset/black')
-    readFilePath(sample_dir='org_white/', save_dir='./dataset/white')
+    readFilePath(sample_dir='../data/org_black/', save_dir='../data/dataset/black')
+    readFilePath(sample_dir='../data/org_white/', save_dir='../data/dataset/white')
